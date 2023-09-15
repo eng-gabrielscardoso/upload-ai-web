@@ -2,14 +2,31 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { Textarea } from "@/components/ui/textarea";
+import { api } from "@/lib/axios";
 import { getFFmpeg } from "@/lib/ffmpeg";
 import { fetchFile } from "@ffmpeg/util";
 import isNull from "lodash/isNull";
 import { FileVideo, Upload } from "lucide-react";
 import { ChangeEvent, FormEvent, useMemo, useRef, useState } from "react";
 
+type TVideoUploadStatus =
+  | "awaiting"
+  | "converting"
+  | "uploading"
+  | "generating"
+  | "success";
+
+const statusMessages: Record<TVideoUploadStatus, string> = {
+  awaiting: "Upload file",
+  converting: "Converting...",
+  uploading: "Uploading...",
+  generating: "Generating...",
+  success: "Success upload file",
+};
+
 export function VideoInputForm() {
   const promptInputRef = useRef<HTMLTextAreaElement>(null);
+  const [status, setStatus] = useState<TVideoUploadStatus>("awaiting");
   const [video, setVideo] = useState<File | null>(null);
 
   async function convertVideoToAudio(video: File) {
@@ -65,7 +82,27 @@ export function VideoInputForm() {
       return;
     }
 
+    await setStatus("converting");
+
     const audio = await convertVideoToAudio(video);
+
+    await setStatus("uploading");
+
+    const data = new FormData();
+
+    data.append("file", audio);
+
+    const response = await api.post("/videos", data);
+
+    const videoId = response.data.id;
+
+    await setStatus("generating");
+
+    await api.post(`/transcriptions/${videoId}`, {
+      prompt,
+    });
+
+    await setStatus("success");
   }
 
   const previewURL = useMemo(() => {
@@ -108,12 +145,19 @@ export function VideoInputForm() {
           className="h-20 leading-relaxed resize-none"
           placeholder="Include keywords presents in video separated by commas (,)"
           ref={promptInputRef}
+          disabled={status !== "awaiting"}
         ></Textarea>
       </div>
 
-      <Button type="submit" className="w-full">
-        Upload video
-        <Upload className="w-4 h-4 ml-2" />
+      <Button type="submit" className="w-full" disabled={status !== "awaiting"}>
+        {status === "awaiting" ? (
+          <>
+            {statusMessages[status]}
+            <Upload className="w-4 h-4 ml-2" />
+          </>
+        ) : (
+          <>statusMessages[status]</>
+        )}
       </Button>
     </form>
   );
