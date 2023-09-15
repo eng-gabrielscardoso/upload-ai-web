@@ -79,7 +79,7 @@ export function App() {
             <div className="space-y-4">
               <Label>Temperature</Label>
               <Slider min={0} max={1} step={0.1} />
-              <span className="block text-xs text-muted-foreground italic leading-relaxed">High values tend to leave the content more creative and more prone to errors.</span>
+              <span className="block text-xs text-muted-foreground italic leading-relaxed">High values tend to leave the content more creative and mor e prone to errors.</span>
             </div>
           </form>
 
