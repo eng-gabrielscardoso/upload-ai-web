@@ -1,11 +1,12 @@
+import { VideoInputForm } from "@/components/app/video-input-form";
 import { Header } from "@/components/base/header";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
+import { Slider } from "@/components/ui/slider";
 import { Textarea } from "@/components/ui/textarea";
-import { FileVideo, Upload, Wand2 } from "lucide-react";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./components/ui/select";
-import { Slider } from "./components/ui/slider";
+import { Wand2 } from "lucide-react";
 
 export function App() {
   return (
@@ -22,25 +23,7 @@ export function App() {
         </div>
 
         <aside className="w-80 space-y-6">
-          <form className="space-y-4">
-            <label htmlFor="video" className="border flex items-center justify-center rounded-md aspect-video cursor-pointer border-dashed text-sm flex-col gap-2 text-muted-foreground hover:bg-primary/10">
-              Upload video
-              <FileVideo className="w-4 h-4" />
-            </label>
-            <input type="file" id="video" accept="video/mp4" className="sr-only" />
-            
-            <Separator />
-            
-            <div className="space-y-2">
-              <Label htmlFor="transcription_prompt">Transcription prompt</Label>
-              <Textarea id="transcription_prompt" className="h-20 leading-relaxed resize-none" placeholder="Include keywords presents in video separated by commas (,)"></Textarea>
-            </div>
-
-            <Button type="submit" className="w-full">
-              Upload video
-              <Upload className="w-4 h-4 ml-2" />
-            </Button>
-          </form>
+          <VideoInputForm />
 
           <Separator />
 
