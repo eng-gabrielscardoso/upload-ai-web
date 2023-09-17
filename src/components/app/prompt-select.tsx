@@ -42,7 +42,11 @@ export function PromptSelect(props: IProps) {
       </SelectTrigger>
       <SelectContent>
         {prompts?.map((prompt) => {
-          return <SelectItem value={prompt.id}>{prompt.title}</SelectItem>;
+          return (
+            <SelectItem key={prompt.id} value={prompt.id}>
+              {prompt.title}
+            </SelectItem>
+          );
         })}
       </SelectContent>
     </Select>
