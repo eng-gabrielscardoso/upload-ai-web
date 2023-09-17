@@ -9,6 +9,10 @@ import isNull from "lodash/isNull";
 import { FileVideo, Upload } from "lucide-react";
 import { ChangeEvent, FormEvent, useMemo, useRef, useState } from "react";
 
+interface IProps {
+  onVideoUploaded: (id: string) => void;
+}
+
 type TVideoUploadStatus =
   | "awaiting"
   | "converting"
@@ -24,7 +28,7 @@ const statusMessages: Record<TVideoUploadStatus, string> = {
   success: "Success upload file",
 };
 
-export function VideoInputForm() {
+export function VideoInputForm(props: IProps) {
   const promptInputRef = useRef<HTMLTextAreaElement>(null);
   const [status, setStatus] = useState<TVideoUploadStatus>("awaiting");
   const [video, setVideo] = useState<File | null>(null);
@@ -103,6 +107,8 @@ export function VideoInputForm() {
     });
 
     await setStatus("success");
+
+    props.onVideoUploaded(videoId);
   }
 
   const previewURL = useMemo(() => {
@@ -156,7 +162,7 @@ export function VideoInputForm() {
             <Upload className="w-4 h-4 ml-2" />
           </>
         ) : (
-          <>statusMessages[status]</>
+          <>{statusMessages[status]}</>
         )}
       </Button>
     </form>

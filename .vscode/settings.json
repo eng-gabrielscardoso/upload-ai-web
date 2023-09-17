@@ -3,7 +3,7 @@
 
   "cSpell.language": "en-GB",
 
-  "cSpell.words": ["lucide"],
+  "cSpell.words": ["gabrielscardoso", "lucide"],
 
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
