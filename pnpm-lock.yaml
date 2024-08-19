@@ -33,8 +33,8 @@ importers:
         specifier: ^1.0.2
         version: 1.0.2(@types/react@18.2.37)(react@18.2.0)
       '@types/lodash':
-        specifier: ^4.14.200
-        version: 4.14.200
+        specifier: ^4.17.7
+        version: 4.17.7
       ai:
         specifier: ^2.2.17
         version: 2.2.17(react@18.2.0)(solid-js@1.7.11)(svelte@4.2.0)(vue@3.3.4)
@@ -856,17 +856,14 @@ packages:
   '@types/babel__traverse@7.20.3':
     resolution: {integrity: sha512-Lsh766rGEFbaxMIDH7Qa+Yha8cMVI3qAK6CHt3OR0YfxOIn5Z54iHiyDRycHrBqeIiqGa20Kpsv1cavfBKkRSw==}
 
-  '@types/estree@1.0.1':
-    resolution: {integrity: sha512-LG4opVs2ANWZ1TJoKc937iMmNstM/d0ae1vNbnBvBhqCSezgVUOzcLCqbI5elV8Vy6WKwKjaqR+zO9VKirBBCA==}
-
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
 
   '@types/json-schema@7.0.12':
     resolution: {integrity: sha512-Hr5Jfhc9eYOQNPYO5WLDq/n4jqijdHNlDXjuAQkkt+mWdQR+XJToOHrsD4cPaMXpn6KO7y2+wM8AZEs8VpBLVA==}
 
-  '@types/lodash@4.14.200':
-    resolution: {integrity: sha512-YI/M/4HRImtNf3pJgbF+W6FrXovqj+T+/HpENLTooK9PnkacBsDpeP3IpHab40CClUfhNmdM2WTNP2sa2dni5Q==}
+  '@types/lodash@4.17.7':
+    resolution: {integrity: sha512-8wTvZawATi/lsmNu10/j2hk1KEP0IvjubqPE3cu1Xz7xfXXt5oCq3SNUz4fMIP4XGF9Ky+Ue2tBA3hcS7LSBlA==}
 
   '@types/node@20.11.19':
     resolution: {integrity: sha512-7xMnVEcZFu0DikYjWOlRq7NTPETrm7teqUT2WkQjrTIkEgUyyGdWsj/Zg8bEJt5TNklzbPD1X3fqfsHw3SpapQ==}
@@ -2735,13 +2732,11 @@ snapshots:
     dependencies:
       '@babel/types': 7.23.0
 
-  '@types/estree@1.0.1': {}
-
   '@types/estree@1.0.5': {}
 
   '@types/json-schema@7.0.12': {}
 
-  '@types/lodash@4.14.200': {}
+  '@types/lodash@4.17.7': {}
 
   '@types/node@20.11.19':
     dependencies:
@@ -2893,7 +2888,7 @@ snapshots:
       '@babel/parser': 7.23.4
       '@vue/shared': 3.3.4
       estree-walker: 2.0.2
-      source-map-js: 1.0.2
+      source-map-js: 1.2.0
 
   '@vue/compiler-dom@3.3.4':
     dependencies:
@@ -2910,8 +2905,8 @@ snapshots:
       '@vue/shared': 3.3.4
       estree-walker: 2.0.2
       magic-string: 0.30.3
-      postcss: 8.4.31
-      source-map-js: 1.0.2
+      postcss: 8.4.41
+      source-map-js: 1.2.0
 
   '@vue/compiler-ssr@3.3.4':
     dependencies:
@@ -3090,7 +3085,7 @@ snapshots:
   code-red@1.0.4:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.15
-      '@types/estree': 1.0.1
+      '@types/estree': 1.0.5
       acorn: 8.10.0
       estree-walker: 3.0.3
       periscopic: 3.1.0
@@ -3126,7 +3121,7 @@ snapshots:
   css-tree@2.3.1:
     dependencies:
       mdn-data: 2.0.30
-      source-map-js: 1.0.2
+      source-map-js: 1.2.0
 
   cssesc@3.0.0: {}
 
@@ -3274,7 +3269,7 @@ snapshots:
 
   estree-walker@3.0.3:
     dependencies:
-      '@types/estree': 1.0.1
+      '@types/estree': 1.0.5
 
   esutils@2.0.3: {}
 
@@ -3433,7 +3428,7 @@ snapshots:
 
   is-reference@3.0.2:
     dependencies:
-      '@types/estree': 1.0.1
+      '@types/estree': 1.0.5
 
   isexe@2.0.0: {}
 
@@ -3580,7 +3575,7 @@ snapshots:
 
   periscopic@3.1.0:
     dependencies:
-      '@types/estree': 1.0.1
+      '@types/estree': 1.0.5
       estree-walker: 3.0.3
       is-reference: 3.0.2
 
