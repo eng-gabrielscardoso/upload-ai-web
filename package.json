@@ -19,7 +19,7 @@
     "@radix-ui/react-slider": "^1.1.2",
     "@radix-ui/react-slot": "^1.0.2",
     "@types/lodash": "^4.17.7",
-    "ai": "^2.2.17",
+    "ai": "^3.3.19",
     "axios": "^1.7.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
