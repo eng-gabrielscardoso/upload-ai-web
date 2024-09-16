@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@ffmpeg/ffmpeg':
-        specifier: ^0.12.7
-        version: 0.12.7
+        specifier: ^0.12.10
+        version: 0.12.10
       '@ffmpeg/util':
         specifier: ^0.12.1
         version: 0.12.1
@@ -468,8 +468,8 @@ packages:
     resolution: {integrity: sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  '@ffmpeg/ffmpeg@0.12.7':
-    resolution: {integrity: sha512-Uw9h1tNU4/Q4YRrgBKvnKiH5gpL+nl8h4HRfvSK0K93MqVOan6Qs3Lj82l9i1qj6xQLPramXw0Wl6g65W4pfnA==}
+  '@ffmpeg/ffmpeg@0.12.10':
+    resolution: {integrity: sha512-lVtk8PW8e+NUzGZhPTWj2P1J4/NyuCrbDD3O9IGpSeLYtUZKBqZO8CNj1WYGghep/MXoM8e1qVY1GztTkf8YYQ==}
     engines: {node: '>=18.x'}
 
   '@ffmpeg/types@0.12.2':
@@ -2490,7 +2490,7 @@ snapshots:
 
   '@eslint/js@8.57.0': {}
 
-  '@ffmpeg/ffmpeg@0.12.7':
+  '@ffmpeg/ffmpeg@0.12.10':
     dependencies:
       '@ffmpeg/types': 0.12.2
 
